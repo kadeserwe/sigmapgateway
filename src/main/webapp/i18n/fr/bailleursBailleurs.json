@@ -1,0 +1,26 @@
+{
+  "gatewaysigmapApp": {
+    "bailleursBailleurs": {
+      "home": {
+        "title": "Bailleurs",
+        "createLabel": "Créer un nouveau Bailleurs",
+        "createOrEditLabel": "Créer ou éditer un Bailleurs",
+        "notFound": "Aucun Bailleurs trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Bailleurs {{ id }} ?"
+      },
+      "detail": {
+        "title": "Bailleurs"
+      },
+      "libelle": "Libelle"
+    }
+  },
+  "bailleursApp": {
+    "bailleursBailleurs": {
+      "created": "Un nouveau Bailleurs a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Bailleurs avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Bailleurs avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

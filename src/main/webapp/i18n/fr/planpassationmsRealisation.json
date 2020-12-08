@@ -1,0 +1,29 @@
+{
+  "gatewaysigmapApp": {
+    "planpassationmsRealisation": {
+      "home": {
+        "title": "Realisations",
+        "createLabel": "Créer un nouveau Realisation",
+        "createOrEditLabel": "Créer ou éditer un Realisation",
+        "notFound": "Aucun Realisation trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Realisation {{ id }} ?"
+      },
+      "detail": {
+        "title": "Realisation"
+      },
+      "libelle": "Libelle",
+      "dateAttribution": "Date Attribution",
+      "delaiexecution": "Delaiexecution",
+      "planPassation": "Plan Passation"
+    }
+  },
+  "planpassationmsApp": {
+    "planpassationmsRealisation": {
+      "created": "Un nouveau Realisation a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Realisation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Realisation avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

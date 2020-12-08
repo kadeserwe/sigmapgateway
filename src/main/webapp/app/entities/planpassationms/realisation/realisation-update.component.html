@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-realisation-heading" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.home.createOrEditLabel">Create or edit a Realisation</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.libelle" for="field_libelle">Libelle</label>
+                    <input type="text" class="form-control" name="libelle" id="field_libelle"
+                           formControlName="libelle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateAttribution" for="field_dateAttribution">Date Attribution</label>
+                    <div class="input-group">
+                        <input id="field_dateAttribution" type="text" class="form-control" name="dateAttribution" ngbDatepicker #dateAttributionDp="ngbDatepicker" formControlName="dateAttribution"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateAttributionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateAttribution')!.invalid && (editForm.get('dateAttribution')!.dirty || editForm.get('dateAttribution')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateAttribution')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.delaiexecution" for="field_delaiexecution">Delaiexecution</label>
+                    <input type="number" class="form-control" name="delaiexecution" id="field_delaiexecution"
+                           formControlName="delaiexecution"/>
+                    <div *ngIf="editForm.get('delaiexecution')!.invalid && (editForm.get('delaiexecution')!.dirty || editForm.get('delaiexecution')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('delaiexecution')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('delaiexecution')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.planPassation" for="field_planPassation">Plan Passation</label>
+                    <select class="form-control" id="field_planPassation" name="planPassation" formControlName="planPassationId">
+                        <option *ngIf="!editForm.get('planPassationId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="planPassationOption.id" *ngFor="let planPassationOption of planpassations; trackBy: trackById">{{ planPassationOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('planPassationId')!.invalid && (editForm.get('planPassationId')!.dirty || editForm.get('planPassationId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('planPassationId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

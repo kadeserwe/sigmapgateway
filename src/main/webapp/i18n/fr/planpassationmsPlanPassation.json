@@ -1,0 +1,28 @@
+{
+  "gatewaysigmapApp": {
+    "planpassationmsPlanPassation": {
+      "home": {
+        "title": "PlanPassations",
+        "createLabel": "Créer un nouveau Plan Passation",
+        "createOrEditLabel": "Créer ou éditer un Plan Passation",
+        "notFound": "Aucun Plan Passation trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Plan Passation {{ id }} ?"
+      },
+      "detail": {
+        "title": "Plan Passation"
+      },
+      "dateDebut": "Date Debut",
+      "dateFin": "Date Fin",
+      "commentaire": "Commentaire"
+    }
+  },
+  "planpassationmsApp": {
+    "planpassationmsPlanPassation": {
+      "created": "Un nouveau Plan Passation a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Plan Passation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Plan Passation avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

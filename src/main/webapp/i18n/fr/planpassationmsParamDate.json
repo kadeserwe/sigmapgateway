@@ -1,0 +1,26 @@
+{
+  "gatewaysigmapApp": {
+    "planpassationmsParamDate": {
+      "home": {
+        "title": "ParamDates",
+        "createLabel": "Créer un nouveau Param Date",
+        "createOrEditLabel": "Créer ou éditer un Param Date",
+        "notFound": "Aucun Param Date trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Param Date {{ id }} ?"
+      },
+      "detail": {
+        "title": "Param Date"
+      },
+      "dateCreat": "Date Creat"
+    }
+  },
+  "planpassationmsApp": {
+    "planpassationmsParamDate": {
+      "created": "Un nouveau Param Date a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Param Date avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Param Date avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}
