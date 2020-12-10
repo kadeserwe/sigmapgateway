@@ -21,6 +21,11 @@ import { RouterModule } from '@angular/router';
         path: 'bailleurs',
         loadChildren: () => import('./bailleurs/bailleurs/bailleurs.module').then(m => m.BailleursBailleursModule),
       },
+      {
+        path: 'mode-passation',
+        loadChildren: () =>
+          import('./planpassationms/mode-passation/mode-passation.module').then(m => m.PlanpassationmsModePassationModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

@@ -3,7 +3,7 @@
     "promptValues": {
       "packageName": "sn.ssi.sigmap",
       "nativeLanguage": "fr",
-      "microservicePath": "../bailleurs"
+      "microservicePath": "../planpassationms"
     },
     "jhipsterVersion": "6.10.5",
     "applicationType": "gateway",
