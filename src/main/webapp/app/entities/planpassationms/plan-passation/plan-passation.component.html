@@ -1,11 +1,11 @@
 <div>
     <h2 id="page-heading">
-        <span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.title">Plan Passations</span>
+        <span >Plan de  Passations</span>
 
         <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-plan-passation" [routerLink]="['/plan-passation/new']">
             <fa-icon icon="plus"></fa-icon>
-            <span  jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.home.createLabel">
-            Create a new Plan Passation
+            <span >
+            Créer un plan de passation
             </span>
         </button>
     </h2>
@@ -21,44 +21,52 @@
     <div class="table-responsive" id="entities" *ngIf="planPassations && planPassations.length > 0">
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
-                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="dateDebut"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateDebut">Date Debut</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="dateFin"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateFin">Date Fin</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaire">Commentaire</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"></th>
-                </tr>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
+                <th scope="col"  jhiSortBy="dateDebut"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateDebut">Date Debut</span> <fa-icon icon="sort"></fa-icon></th>
+                <th scope="col"  jhiSortBy="dateFin"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateFin">Date Fin</span> <fa-icon icon="sort"></fa-icon></th>
+                <th scope="col"  jhiSortBy="annee"><span >Année</span> <fa-icon icon="sort"></fa-icon></th>
+                <th scope="col"  jhiSortBy="commentaire"><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaire">Commentaire</span> <fa-icon icon="sort"></fa-icon></th>
+                <th scope="col"></th>
+            </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let planPassation of planPassations ;trackBy: trackId">
-                    <td><a [routerLink]="['/plan-passation', planPassation.id, 'view']">{{ planPassation.id }}</a></td>
-                    <td>{{ planPassation.dateDebut | date:'mediumDate' }}</td>
-                    <td>{{ planPassation.dateFin | date:'mediumDate' }}</td>
-                    <td>{{ planPassation.commentaire }}</td>
-                    <td class="text-right">
-                        <div class="btn-group">
-                            <button type="submit"
-                                    [routerLink]="['/plan-passation', planPassation.id, 'view']"
-                                    class="btn btn-info btn-sm">
-                                <fa-icon icon="eye"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
-                            </button>
+            <tr *ngFor="let planPassation of planPassations ;trackBy: trackId">
+                <!-- <td><a [routerLink]="['/plan-passation', planPassation.id, 'view']">{{ planPassation.id }}</a></td>-->
+                <td>{{ planPassation.dateDebut | date:'mediumDate' }}</td>
+                <td>{{ planPassation.dateFin | date:'mediumDate' }}</td>
+                <td>{{ planPassation.annee }}</td>
+                <td>{{ planPassation.commentaire }}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/plan-passation', planPassation.id, 'view']"
+                                class="btn  btn-sm" [ngbTooltip]="btnDetails">
+                            <fa-icon icon="eye" style="color: #28a745"></fa-icon>
+                            <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>-->
+                        </button>
 
-                            <button type="submit"
-                                    [routerLink]="['/plan-passation', planPassation.id, 'edit']"
-                                    class="btn btn-primary btn-sm">
-                                <fa-icon icon="pencil-alt"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
-                            </button>
+                        <button type="submit"
+                                [routerLink]="['/plan-passation', planPassation.id, 'edit']"
+                                class="btn  btn-sm" [ngbTooltip]="btnModifier">
+                            <fa-icon icon="pencil-alt" style="color: #17a2b8"></fa-icon>
+                            <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>-->
+                        </button>
 
-                            <button type="submit" (click)="delete(planPassation)"
-                                    class="btn btn-danger btn-sm">
-                                <fa-icon icon="times"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
+                        <button type="submit" (click)="delete(planPassation)"
+                                class="btn  btn-sm" [ngbTooltip]="btnSuprimer">
+                            <fa-icon icon="trash-alt" style="color: #aa0000"></fa-icon>
+                            <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>-->
+                        </button>
+                        <!--réalistaions prevues -->
+                        <!--<button type="submit"
+                                routerLink="/realisation"
+                                class="btn btn-dark btn-sm" [ngbTooltip]="btnrealisation">
+                            <fa-icon icon="pencil-alt"></fa-icon>
+                        </button>-->
+                    </div>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

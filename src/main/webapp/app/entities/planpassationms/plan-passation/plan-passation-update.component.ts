@@ -21,6 +21,7 @@ export class PlanPassationUpdateComponent implements OnInit {
     id: [],
     dateDebut: [],
     dateFin: [],
+    annee: [],
     commentaire: [],
   });
 
@@ -37,6 +38,7 @@ export class PlanPassationUpdateComponent implements OnInit {
       id: planPassation.id,
       dateDebut: planPassation.dateDebut,
       dateFin: planPassation.dateFin,
+      annee: planPassation.annee,
       commentaire: planPassation.commentaire,
     });
   }
@@ -61,6 +63,7 @@ export class PlanPassationUpdateComponent implements OnInit {
       id: this.editForm.get(['id'])!.value,
       dateDebut: this.editForm.get(['dateDebut'])!.value,
       dateFin: this.editForm.get(['dateFin'])!.value,
+      annee: this.editForm.get(['annee'])!.value,
       commentaire: this.editForm.get(['commentaire'])!.value,
     };
   }

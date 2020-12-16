@@ -5,6 +5,7 @@ export interface IPlanPassation {
   dateDebut?: Moment;
   dateFin?: Moment;
   commentaire?: string;
+  annee?: number;
 }
 
 export class PlanPassation implements IPlanPassation {

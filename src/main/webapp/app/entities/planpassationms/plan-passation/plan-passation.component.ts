@@ -4,10 +4,11 @@ import { ActivatedRoute, ParamMap, Router, Data } from '@angular/router';
 import { Subscription, combineLatest } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { MatDividerModule } from '@angular/material/divider';
 
 import { IPlanPassation } from 'app/shared/model/planpassationms/plan-passation.model';
 
-import { ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
+import { BOUTON_DETAILS, BOUTON_MODIFIER, BOUTON_SUPRIMER, ITEMS_PER_PAGE } from 'app/shared/constants/pagination.constants';
 import { PlanPassationService } from './plan-passation.service';
 import { PlanPassationDeleteDialogComponent } from './plan-passation-delete-dialog.component';
 
@@ -24,6 +25,9 @@ export class PlanPassationComponent implements OnInit, OnDestroy {
   predicate!: string;
   ascending!: boolean;
   ngbPaginationPage = 1;
+  btnSuprimer = BOUTON_SUPRIMER;
+  btnModifier = BOUTON_MODIFIER;
+  btnDetails = BOUTON_DETAILS;
 
   constructor(
     protected planPassationService: PlanPassationService,
