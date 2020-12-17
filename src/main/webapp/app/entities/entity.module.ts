@@ -26,6 +26,32 @@ import { RouterModule } from '@angular/router';
         loadChildren: () =>
           import('./planpassationms/mode-passation/mode-passation.module').then(m => m.PlanpassationmsModePassationModule),
       },
+      {
+        path: 'type-de-marche',
+        loadChildren: () => import('./planpassationms/type-de-marche/type-de-marche.module').then(m => m.PlanpassationmsTypeDeMarcheModule),
+      },
+      {
+        path: 'type-source-de-financement',
+        loadChildren: () =>
+          import('./planpassationms/type-source-de-financement/type-source-de-financement.module').then(
+            m => m.PlanpassationmsTypeSourceDeFinancementModule
+          ),
+      },
+      {
+        path: 'source-de-financement',
+        loadChildren: () =>
+          import('./planpassationms/source-de-financement/source-de-financement.module').then(
+            m => m.PlanpassationmsSourceDeFinancementModule
+          ),
+      },
+      {
+        path: 'type-service',
+        loadChildren: () => import('./planpassationms/type-service/type-service.module').then(m => m.PlanpassationmsTypeServiceModule),
+      },
+      {
+        path: 'syg-service',
+        loadChildren: () => import('./planpassationms/syg-service/syg-service.module').then(m => m.PlanpassationmsSygServiceModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],
