@@ -26,6 +26,10 @@ import { RouterModule } from '@angular/router';
         loadChildren: () =>
           import('./planpassationms/mode-passation/mode-passation.module').then(m => m.PlanpassationmsModePassationModule),
       },
+      {
+        path: 'historique',
+        loadChildren: () => import('./planpassationms/historique/historique.module').then(m => m.PlanpassationmsHistoriqueModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

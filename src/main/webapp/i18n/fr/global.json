@@ -12,6 +12,7 @@
         "planpassationmsRealisation": "Realisation",
         "bailleursBailleurs": "Bailleurs",
         "planpassationmsModePassation": "Mode Passation",
+        "planpassationmsHistorique": "Historique",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

@@ -20,6 +20,91 @@
                 <dd>
                     <span>{{ planPassation.commentaire }}</span>
                 </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee">Annee</span></dt>
+                <dd>
+                    <span>{{ planPassation.annee }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation">Date Creation</span></dt>
+                <dd>
+                    <span>{{ planPassation.dateCreation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseValidation">Date Mise Validation</span></dt>
+                <dd>
+                    <span>{{ planPassation.dateMiseValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation">Date Validation</span></dt>
+                <dd>
+                    <span>{{ planPassation.dateValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.statut">Statut</span></dt>
+                <dd>
+                    <span>{{ planPassation.statut }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaireMiseEnValidationAC">Commentaire Mise En Validation AC</span></dt>
+                <dd>
+                    <span>{{ planPassation.commentaireMiseEnValidationAC }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceMiseValidationAC">Reference Mise Validation AC</span></dt>
+                <dd>
+                    <span>{{ planPassation.referenceMiseValidationAC }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierMiseValidationAC">Fichier Mise Validation AC</span></dt>
+                <dd>
+                    <div *ngIf="planPassation.fichierMiseValidationAC">
+                        <a (click)="openFile(planPassation.fichierMiseValidationACContentType, planPassation.fichierMiseValidationAC)" jhiTranslate="entity.action.open">open</a>
+                        {{ planPassation.fichierMiseValidationACContentType }}, {{ byteSize(planPassation.fichierMiseValidationAC) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseEnValidationCcmp">Date Mise En Validation Ccmp</span></dt>
+                <dd>
+                    <span>{{ planPassation.dateMiseEnValidationCcmp }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierMiseValidationCcmp">Fichier Mise Validation Ccmp</span></dt>
+                <dd>
+                    <div *ngIf="planPassation.fichierMiseValidationCcmp">
+                        <a (click)="openFile(planPassation.fichierMiseValidationCcmpContentType, planPassation.fichierMiseValidationCcmp)" jhiTranslate="entity.action.open">open</a>
+                        {{ planPassation.fichierMiseValidationCcmpContentType }}, {{ byteSize(planPassation.fichierMiseValidationCcmp) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceMiseValidationCcmp">Reference Mise Validation Ccmp</span></dt>
+                <dd>
+                    <span>{{ planPassation.referenceMiseValidationCcmp }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation1">Date Validation 1</span></dt>
+                <dd>
+                    <span>{{ planPassation.dateValidation1 }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaireValidation">Commentaire Validation</span></dt>
+                <dd>
+                    <span>{{ planPassation.commentaireValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceValidation">Reference Validation</span></dt>
+                <dd>
+                    <span>{{ planPassation.referenceValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierValidation">Fichier Validation</span></dt>
+                <dd>
+                    <div *ngIf="planPassation.fichierValidation">
+                        <a (click)="openFile(planPassation.fichierValidationContentType, planPassation.fichierValidation)" jhiTranslate="entity.action.open">open</a>
+                        {{ planPassation.fichierValidationContentType }}, {{ byteSize(planPassation.fichierValidation) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation2">Date Validation 2</span></dt>
+                <dd>
+                    <span>{{ planPassation.dateValidation2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateRejet">Date Rejet</span></dt>
+                <dd>
+                    <span>{{ planPassation.dateRejet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.datePublication">Date Publication</span></dt>
+                <dd>
+                    <span>{{ planPassation.datePublication }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentairePublication">Commentaire Publication</span></dt>
+                <dd>
+                    <span>{{ planPassation.commentairePublication }}</span>
+                </dd>
             </dl>
 
             <button type="submit"

@@ -24,7 +24,31 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new Realisation(0, 'AAAAAAA', currentDate, 0);
+      elemDefault = new Realisation(
+        0,
+        'AAAAAAA',
+        currentDate,
+        0,
+        'AAAAAAA',
+        0,
+        0,
+        0,
+        'AAAAAAA',
+        'AAAAAAA',
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate,
+        currentDate
+      );
     });
 
     describe('Service methods', () => {
@@ -32,6 +56,19 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             dateAttribution: currentDate.format(DATE_FORMAT),
+            dateReceptionDossier: currentDate.format(DATE_FORMAT),
+            dateNonObjection: currentDate.format(DATE_FORMAT),
+            dateAutorisation: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjection: currentDate.format(DATE_FORMAT),
+            dateRecepDossCorrige: currentDate.format(DATE_FORMAT),
+            datePubParPrmp: currentDate.format(DATE_FORMAT),
+            dateOuverturePlis: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectOcmp: currentDate.format(DATE_FORMAT),
+            dateRecepRapportEva: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectPtf: currentDate.format(DATE_FORMAT),
+            dateExamenJuridique: currentDate.format(DATE_FORMAT),
+            dateNotifContrat: currentDate.format(DATE_FORMAT),
+            dateApprobationContrat: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -48,6 +85,19 @@ describe('Service Tests', () => {
           {
             id: 0,
             dateAttribution: currentDate.format(DATE_FORMAT),
+            dateReceptionDossier: currentDate.format(DATE_FORMAT),
+            dateNonObjection: currentDate.format(DATE_FORMAT),
+            dateAutorisation: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjection: currentDate.format(DATE_FORMAT),
+            dateRecepDossCorrige: currentDate.format(DATE_FORMAT),
+            datePubParPrmp: currentDate.format(DATE_FORMAT),
+            dateOuverturePlis: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectOcmp: currentDate.format(DATE_FORMAT),
+            dateRecepRapportEva: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectPtf: currentDate.format(DATE_FORMAT),
+            dateExamenJuridique: currentDate.format(DATE_FORMAT),
+            dateNotifContrat: currentDate.format(DATE_FORMAT),
+            dateApprobationContrat: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -55,6 +105,19 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             dateAttribution: currentDate,
+            dateReceptionDossier: currentDate,
+            dateNonObjection: currentDate,
+            dateAutorisation: currentDate,
+            dateRecepNonObjection: currentDate,
+            dateRecepDossCorrige: currentDate,
+            datePubParPrmp: currentDate,
+            dateOuverturePlis: currentDate,
+            dateRecepNonObjectOcmp: currentDate,
+            dateRecepRapportEva: currentDate,
+            dateRecepNonObjectPtf: currentDate,
+            dateExamenJuridique: currentDate,
+            dateNotifContrat: currentDate,
+            dateApprobationContrat: currentDate,
           },
           returnedFromService
         );
@@ -72,6 +135,25 @@ describe('Service Tests', () => {
             libelle: 'BBBBBB',
             dateAttribution: currentDate.format(DATE_FORMAT),
             delaiexecution: 1,
+            objet: 'BBBBBB',
+            montant: 1,
+            examenDncmp: 1,
+            examenPtf: 1,
+            chapitreImputation: 'BBBBBB',
+            autorisationEngagement: 'BBBBBB',
+            dateReceptionDossier: currentDate.format(DATE_FORMAT),
+            dateNonObjection: currentDate.format(DATE_FORMAT),
+            dateAutorisation: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjection: currentDate.format(DATE_FORMAT),
+            dateRecepDossCorrige: currentDate.format(DATE_FORMAT),
+            datePubParPrmp: currentDate.format(DATE_FORMAT),
+            dateOuverturePlis: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectOcmp: currentDate.format(DATE_FORMAT),
+            dateRecepRapportEva: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectPtf: currentDate.format(DATE_FORMAT),
+            dateExamenJuridique: currentDate.format(DATE_FORMAT),
+            dateNotifContrat: currentDate.format(DATE_FORMAT),
+            dateApprobationContrat: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -79,6 +161,19 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             dateAttribution: currentDate,
+            dateReceptionDossier: currentDate,
+            dateNonObjection: currentDate,
+            dateAutorisation: currentDate,
+            dateRecepNonObjection: currentDate,
+            dateRecepDossCorrige: currentDate,
+            datePubParPrmp: currentDate,
+            dateOuverturePlis: currentDate,
+            dateRecepNonObjectOcmp: currentDate,
+            dateRecepRapportEva: currentDate,
+            dateRecepNonObjectPtf: currentDate,
+            dateExamenJuridique: currentDate,
+            dateNotifContrat: currentDate,
+            dateApprobationContrat: currentDate,
           },
           returnedFromService
         );
@@ -96,6 +191,25 @@ describe('Service Tests', () => {
             libelle: 'BBBBBB',
             dateAttribution: currentDate.format(DATE_FORMAT),
             delaiexecution: 1,
+            objet: 'BBBBBB',
+            montant: 1,
+            examenDncmp: 1,
+            examenPtf: 1,
+            chapitreImputation: 'BBBBBB',
+            autorisationEngagement: 'BBBBBB',
+            dateReceptionDossier: currentDate.format(DATE_FORMAT),
+            dateNonObjection: currentDate.format(DATE_FORMAT),
+            dateAutorisation: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjection: currentDate.format(DATE_FORMAT),
+            dateRecepDossCorrige: currentDate.format(DATE_FORMAT),
+            datePubParPrmp: currentDate.format(DATE_FORMAT),
+            dateOuverturePlis: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectOcmp: currentDate.format(DATE_FORMAT),
+            dateRecepRapportEva: currentDate.format(DATE_FORMAT),
+            dateRecepNonObjectPtf: currentDate.format(DATE_FORMAT),
+            dateExamenJuridique: currentDate.format(DATE_FORMAT),
+            dateNotifContrat: currentDate.format(DATE_FORMAT),
+            dateApprobationContrat: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -103,6 +217,19 @@ describe('Service Tests', () => {
         const expected = Object.assign(
           {
             dateAttribution: currentDate,
+            dateReceptionDossier: currentDate,
+            dateNonObjection: currentDate,
+            dateAutorisation: currentDate,
+            dateRecepNonObjection: currentDate,
+            dateRecepDossCorrige: currentDate,
+            datePubParPrmp: currentDate,
+            dateOuverturePlis: currentDate,
+            dateRecepNonObjectOcmp: currentDate,
+            dateRecepRapportEva: currentDate,
+            dateRecepNonObjectPtf: currentDate,
+            dateExamenJuridique: currentDate,
+            dateNotifContrat: currentDate,
+            dateApprobationContrat: currentDate,
           },
           returnedFromService
         );

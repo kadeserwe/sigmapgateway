@@ -53,6 +53,33 @@ export class PlanPassationService {
     const copy: IPlanPassation = Object.assign({}, planPassation, {
       dateDebut: planPassation.dateDebut && planPassation.dateDebut.isValid() ? planPassation.dateDebut.format(DATE_FORMAT) : undefined,
       dateFin: planPassation.dateFin && planPassation.dateFin.isValid() ? planPassation.dateFin.format(DATE_FORMAT) : undefined,
+      dateCreation:
+        planPassation.dateCreation && planPassation.dateCreation.isValid() ? planPassation.dateCreation.format(DATE_FORMAT) : undefined,
+      dateMiseValidation:
+        planPassation.dateMiseValidation && planPassation.dateMiseValidation.isValid()
+          ? planPassation.dateMiseValidation.format(DATE_FORMAT)
+          : undefined,
+      dateValidation:
+        planPassation.dateValidation && planPassation.dateValidation.isValid()
+          ? planPassation.dateValidation.format(DATE_FORMAT)
+          : undefined,
+      dateMiseEnValidationCcmp:
+        planPassation.dateMiseEnValidationCcmp && planPassation.dateMiseEnValidationCcmp.isValid()
+          ? planPassation.dateMiseEnValidationCcmp.format(DATE_FORMAT)
+          : undefined,
+      dateValidation1:
+        planPassation.dateValidation1 && planPassation.dateValidation1.isValid()
+          ? planPassation.dateValidation1.format(DATE_FORMAT)
+          : undefined,
+      dateValidation2:
+        planPassation.dateValidation2 && planPassation.dateValidation2.isValid()
+          ? planPassation.dateValidation2.format(DATE_FORMAT)
+          : undefined,
+      dateRejet: planPassation.dateRejet && planPassation.dateRejet.isValid() ? planPassation.dateRejet.format(DATE_FORMAT) : undefined,
+      datePublication:
+        planPassation.datePublication && planPassation.datePublication.isValid()
+          ? planPassation.datePublication.format(DATE_FORMAT)
+          : undefined,
     });
     return copy;
   }
@@ -61,6 +88,14 @@ export class PlanPassationService {
     if (res.body) {
       res.body.dateDebut = res.body.dateDebut ? moment(res.body.dateDebut) : undefined;
       res.body.dateFin = res.body.dateFin ? moment(res.body.dateFin) : undefined;
+      res.body.dateCreation = res.body.dateCreation ? moment(res.body.dateCreation) : undefined;
+      res.body.dateMiseValidation = res.body.dateMiseValidation ? moment(res.body.dateMiseValidation) : undefined;
+      res.body.dateValidation = res.body.dateValidation ? moment(res.body.dateValidation) : undefined;
+      res.body.dateMiseEnValidationCcmp = res.body.dateMiseEnValidationCcmp ? moment(res.body.dateMiseEnValidationCcmp) : undefined;
+      res.body.dateValidation1 = res.body.dateValidation1 ? moment(res.body.dateValidation1) : undefined;
+      res.body.dateValidation2 = res.body.dateValidation2 ? moment(res.body.dateValidation2) : undefined;
+      res.body.dateRejet = res.body.dateRejet ? moment(res.body.dateRejet) : undefined;
+      res.body.datePublication = res.body.datePublication ? moment(res.body.datePublication) : undefined;
     }
     return res;
   }
@@ -70,6 +105,16 @@ export class PlanPassationService {
       res.body.forEach((planPassation: IPlanPassation) => {
         planPassation.dateDebut = planPassation.dateDebut ? moment(planPassation.dateDebut) : undefined;
         planPassation.dateFin = planPassation.dateFin ? moment(planPassation.dateFin) : undefined;
+        planPassation.dateCreation = planPassation.dateCreation ? moment(planPassation.dateCreation) : undefined;
+        planPassation.dateMiseValidation = planPassation.dateMiseValidation ? moment(planPassation.dateMiseValidation) : undefined;
+        planPassation.dateValidation = planPassation.dateValidation ? moment(planPassation.dateValidation) : undefined;
+        planPassation.dateMiseEnValidationCcmp = planPassation.dateMiseEnValidationCcmp
+          ? moment(planPassation.dateMiseEnValidationCcmp)
+          : undefined;
+        planPassation.dateValidation1 = planPassation.dateValidation1 ? moment(planPassation.dateValidation1) : undefined;
+        planPassation.dateValidation2 = planPassation.dateValidation2 ? moment(planPassation.dateValidation2) : undefined;
+        planPassation.dateRejet = planPassation.dateRejet ? moment(planPassation.dateRejet) : undefined;
+        planPassation.datePublication = planPassation.datePublication ? moment(planPassation.datePublication) : undefined;
       });
     }
     return res;
