@@ -1,0 +1,26 @@
+{
+  "gatewaysigmapApp": {
+    "planpassationmsSygTypeSourceFinancement": {
+      "home": {
+        "title": "SygTypeSourceFinancements",
+        "createLabel": "Créer un nouveau Syg Type Source Financement",
+        "createOrEditLabel": "Créer ou éditer un Syg Type Source Financement",
+        "notFound": "Aucun Syg Type Source Financement trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Syg Type Source Financement {{ id }} ?"
+      },
+      "detail": {
+        "title": "Syg Type Source Financement"
+      },
+      "libelle": "Libelle"
+    }
+  },
+  "planpassationmsApp": {
+    "planpassationmsSygTypeSourceFinancement": {
+      "created": "Un nouveau Syg Type Source Financement a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Syg Type Source Financement avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Syg Type Source Financement avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

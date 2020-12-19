@@ -1,0 +1,28 @@
+{
+  "gatewaysigmapApp": {
+    "planpassationmsSygTypeMarche": {
+      "home": {
+        "title": "SygTypeMarches",
+        "createLabel": "Créer un nouveau Syg Type Marche",
+        "createOrEditLabel": "Créer ou éditer un Syg Type Marche",
+        "notFound": "Aucun Syg Type Marche trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Syg Type Marche {{ id }} ?"
+      },
+      "detail": {
+        "title": "Syg Type Marche"
+      },
+      "code": "Code",
+      "libelle": "Libelle",
+      "description": "Description"
+    }
+  },
+  "planpassationmsApp": {
+    "planpassationmsSygTypeMarche": {
+      "created": "Un nouveau Syg Type Marche a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Syg Type Marche avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Syg Type Marche avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}
