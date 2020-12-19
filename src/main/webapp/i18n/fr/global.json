@@ -12,11 +12,11 @@
         "planpassationmsRealisation": "Realisation",
         "bailleursBailleurs": "Bailleurs",
         "planpassationmsModePassation": "Mode Passation",
-        "planpassationmsTypeDeMarche": "Type De Marche",
-        "planpassationmsTypeSourceDeFinancement": "Type Source De Financement",
-        "planpassationmsSourceDeFinancement": "Source De Financement",
-        "planpassationmsTypeService": "Type Service",
         "planpassationmsSygService": "Syg Service",
+        "planpassationmsSygTypeMarche": "Syg Type Marche",
+        "planpassationmsSygTypeService": "Syg Type Service",
+        "planpassationmsSygTypeSourceFinancement": "Syg Type Source Financement",
+        "planpassationmsSygSourceFinancement": "Syg Source Financement",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {
