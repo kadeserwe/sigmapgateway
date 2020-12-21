@@ -77,6 +77,12 @@
                         </a>
                     </li>
                     <li>
+                        <a class="dropdown-item" routerLink="syg-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.planpassationmsSygService">Services</span>
+                        </a>
+                    </li>
+                    <li>
                         <a class="dropdown-item" routerLink="syg-type-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
                             <span jhiTranslate="global.menu.entities.planpassationmsSygTypeSourceFinancement">Types source de financement</span>
