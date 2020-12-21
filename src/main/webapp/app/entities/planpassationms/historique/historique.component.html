@@ -1,0 +1,107 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.home.title">Historiques</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-historique" [routerLink]="['/historique/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.home.createLabel">
+            Create a new Historique
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="historiques?.length === 0">
+        <span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.home.notFound">No historiques found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="historiques && historiques.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                   <!-- <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
+                    <th scope="col"  jhiSortBy="dateRejet"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateRejet">Date Rejet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateRjet2"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateRjet2">Date Rjet 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="dateMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateMiseValidation">Date Mise Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentaireRejet"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireRejet">Commentaire Rejet</span> <fa-icon icon="sort"></fa-icon></th>
+                   <!-- <th scope="col"  jhiSortBy="commentaireMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireMiseValidation">Commentaire Mise Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierMiseValidation"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierMiseValidation">Fichier Mise Validation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierRejet"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierRejet">Fichier Rejet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etat"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.etat">Etat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="etat2"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.etat2">Etat 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentaireRejet2"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireRejet2">Commentaire Rejet 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fichierRejet2"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierRejet2">Fichier Rejet 2</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="planPassationId"><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.planPassation">Plan Passation</span> <fa-icon icon="sort"></fa-icon></th>-->
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let historique of historiques ;trackBy: trackId">
+                   <!-- <td><a [routerLink]="['/historique', historique.id, 'view']">{{ historique.id }}</a></td>-->
+                    <td>{{ historique.dateRejet | date:'mediumDate' }}</td>
+                    <td>{{ historique.dateRjet2 | date:'mediumDate' }}</td>
+                    <td>{{ historique.dateMiseValidation | date:'mediumDate' }}</td>
+                    <td>{{ historique.commentaireRejet }}</td>
+                   <!-- <td>{{ historique.commentaireMiseValidation }}</td>
+                    <td>
+                        <a *ngIf="historique.fichierMiseValidation" (click)="openFile(historique.fichierMiseValidationContentType, historique.fichierMiseValidation)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="historique.fichierMiseValidation">{{ historique.fichierMiseValidationContentType }}, {{ byteSize(historique.fichierMiseValidation) }}</span>
+                    </td>
+                    <td>
+                        <a *ngIf="historique.fichierRejet" (click)="openFile(historique.fichierRejetContentType, historique.fichierRejet)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="historique.fichierRejet">{{ historique.fichierRejetContentType }}, {{ byteSize(historique.fichierRejet) }}</span>
+                    </td>
+                    <td>{{ historique.etat }}</td>
+                    <td>{{ historique.etat2 }}</td>
+                    <td>{{ historique.commentaireRejet2 }}</td>
+                    <td>
+                        <a *ngIf="historique.fichierRejet2" (click)="openFile(historique.fichierRejet2ContentType, historique.fichierRejet2)" jhiTranslate="entity.action.open">open</a>
+                        <span *ngIf="historique.fichierRejet2">{{ historique.fichierRejet2ContentType }}, {{ byteSize(historique.fichierRejet2) }}</span>
+                    </td>
+                    <td>
+                        <div *ngIf="historique.planPassationId">
+                            <a [routerLink]="['/plan-passation', historique.planPassationId , 'view']" >{{ historique.planPassationId }}</a>
+                        </div>
+                    </td>
+-->                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/plan-passation', historique.id, 'view']"
+                                    class="btn  btn-sm" [ngbTooltip]="btnDetails">
+                                <fa-icon icon="eye" style="color: #28a745"></fa-icon>
+                                <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>-->
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/plan-passation', historique.id, 'edit']"
+                                    class="btn  btn-sm" [ngbTooltip]="btnModifier">
+                                <fa-icon icon="pencil-alt" style="color: #17a2b8"></fa-icon>
+                                <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>-->
+                            </button>
+
+                            <button type="submit" (click)="delete(historique)"
+                                    class="btn  btn-sm" [ngbTooltip]="btnSuprimer">
+                                <fa-icon icon="trash-alt" style="color: #aa0000"></fa-icon>
+                                <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>-->
+                            </button>
+
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="historiques && historiques.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

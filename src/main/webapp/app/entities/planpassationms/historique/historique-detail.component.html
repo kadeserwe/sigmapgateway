@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="historique">
+            <h2><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.detail.title">Historique</span> {{ historique.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateRejet">Date Rejet</span></dt>
+                <dd>
+                    <span>{{ historique.dateRejet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateRjet2">Date Rjet 2</span></dt>
+                <dd>
+                    <span>{{ historique.dateRjet2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateMiseValidation">Date Mise Validation</span></dt>
+                <dd>
+                    <span>{{ historique.dateMiseValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireRejet">Commentaire Rejet</span></dt>
+                <dd>
+                    <span>{{ historique.commentaireRejet }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireMiseValidation">Commentaire Mise Validation</span></dt>
+                <dd>
+                    <span>{{ historique.commentaireMiseValidation }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierMiseValidation">Fichier Mise Validation</span></dt>
+                <dd>
+                    <div *ngIf="historique.fichierMiseValidation">
+                        <a (click)="openFile(historique.fichierMiseValidationContentType, historique.fichierMiseValidation)" jhiTranslate="entity.action.open">open</a>
+                        {{ historique.fichierMiseValidationContentType }}, {{ byteSize(historique.fichierMiseValidation) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierRejet">Fichier Rejet</span></dt>
+                <dd>
+                    <div *ngIf="historique.fichierRejet">
+                        <a (click)="openFile(historique.fichierRejetContentType, historique.fichierRejet)" jhiTranslate="entity.action.open">open</a>
+                        {{ historique.fichierRejetContentType }}, {{ byteSize(historique.fichierRejet) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.etat">Etat</span></dt>
+                <dd>
+                    <span>{{ historique.etat }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.etat2">Etat 2</span></dt>
+                <dd>
+                    <span>{{ historique.etat2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireRejet2">Commentaire Rejet 2</span></dt>
+                <dd>
+                    <span>{{ historique.commentaireRejet2 }}</span>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierRejet2">Fichier Rejet 2</span></dt>
+                <dd>
+                    <div *ngIf="historique.fichierRejet2">
+                        <a (click)="openFile(historique.fichierRejet2ContentType, historique.fichierRejet2)" jhiTranslate="entity.action.open">open</a>
+                        {{ historique.fichierRejet2ContentType }}, {{ byteSize(historique.fichierRejet2) }}
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.planPassation">Plan Passation</span></dt>
+                <dd>
+                    <div *ngIf="historique.planPassationId">
+                        <a [routerLink]="['/plan-passation', historique.planPassationId, 'view']">{{ historique.planPassationId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/historique', historique.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
