@@ -1,0 +1,37 @@
+{
+  "gatewaysigmapApp": {
+    "planpassationmsHistorique": {
+      "home": {
+        "title": "Historiques",
+        "createLabel": "Créer un nouveau Historique",
+        "createOrEditLabel": "Créer ou éditer un Historique",
+        "notFound": "Aucun Historique trouvé"
+      },
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Historique {{ id }} ?"
+      },
+      "detail": {
+        "title": "Historique"
+      },
+      "dateRejet": "Date Rejet",
+      "dateRjet2": "Date Rjet 2",
+      "dateMiseValidation": "Date Mise Validation",
+      "commentaireRejet": "Commentaire Rejet",
+      "commentaireMiseValidation": "Commentaire Mise Validation",
+      "fichierMiseValidation": "Fichier Mise Validation",
+      "fichierRejet": "Fichier Rejet",
+      "etat": "Etat",
+      "etat2": "Etat 2",
+      "commentaireRejet2": "Commentaire Rejet 2",
+      "fichierRejet2": "Fichier Rejet 2",
+      "planPassation": "Plan Passation"
+    }
+  },
+  "planpassationmsApp": {
+    "planpassationmsHistorique": {
+      "created": "Un nouveau Historique a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Historique avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Historique avec l'identifiant {{ param }} a été supprimé"
+    }
+  }
+}

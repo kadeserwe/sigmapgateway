@@ -1,0 +1,157 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-historique-heading" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.home.createOrEditLabel">Create or edit a Historique</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateRejet" for="field_dateRejet">Date Rejet</label>
+                    <div class="input-group">
+                        <input id="field_dateRejet" type="text" class="form-control" name="dateRejet" ngbDatepicker #dateRejetDp="ngbDatepicker" formControlName="dateRejet"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRejetDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateRjet2" for="field_dateRjet2">Date Rjet 2</label>
+                    <div class="input-group">
+                        <input id="field_dateRjet2" type="text" class="form-control" name="dateRjet2" ngbDatepicker #dateRjet2Dp="ngbDatepicker" formControlName="dateRjet2"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRjet2Dp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.dateMiseValidation" for="field_dateMiseValidation">Date Mise Validation</label>
+                    <div class="input-group">
+                        <input id="field_dateMiseValidation" type="text" class="form-control" name="dateMiseValidation" ngbDatepicker #dateMiseValidationDp="ngbDatepicker" formControlName="dateMiseValidation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateMiseValidationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireRejet" for="field_commentaireRejet">Commentaire Rejet</label>
+                    <input type="text" class="form-control" name="commentaireRejet" id="field_commentaireRejet"
+                           formControlName="commentaireRejet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireMiseValidation" for="field_commentaireMiseValidation">Commentaire Mise Validation</label>
+                    <input type="text" class="form-control" name="commentaireMiseValidation" id="field_commentaireMiseValidation"
+                           formControlName="commentaireMiseValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierMiseValidation" for="field_fichierMiseValidation">Fichier Mise Validation</label>
+                    <div>
+                        <div *ngIf="editForm.get('fichierMiseValidation')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('fichierMiseValidationContentType')!.value, editForm.get('fichierMiseValidation')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('fichierMiseValidationContentType')!.value }}, {{ byteSize(editForm.get('fichierMiseValidation')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({fichierMiseValidation: null});editForm.patchValue({fichierMiseValidationContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_fichierMiseValidation" (change)="setFileData($event, 'fichierMiseValidation', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="fichierMiseValidation" id="field_fichierMiseValidation"
+                           formControlName="fichierMiseValidation"/>
+                    <input type="hidden" class="form-control" name="fichierMiseValidationContentType" id="field_fichierMiseValidationContentType"
+                           formControlName="fichierMiseValidationContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierRejet" for="field_fichierRejet">Fichier Rejet</label>
+                    <div>
+                        <div *ngIf="editForm.get('fichierRejet')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('fichierRejetContentType')!.value, editForm.get('fichierRejet')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('fichierRejetContentType')!.value }}, {{ byteSize(editForm.get('fichierRejet')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({fichierRejet: null});editForm.patchValue({fichierRejetContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_fichierRejet" (change)="setFileData($event, 'fichierRejet', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="fichierRejet" id="field_fichierRejet"
+                           formControlName="fichierRejet"/>
+                    <input type="hidden" class="form-control" name="fichierRejetContentType" id="field_fichierRejetContentType"
+                           formControlName="fichierRejetContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.etat" for="field_etat">Etat</label>
+                    <input type="text" class="form-control" name="etat" id="field_etat"
+                           formControlName="etat"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.etat2" for="field_etat2">Etat 2</label>
+                    <input type="text" class="form-control" name="etat2" id="field_etat2"
+                           formControlName="etat2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.commentaireRejet2" for="field_commentaireRejet2">Commentaire Rejet 2</label>
+                    <input type="text" class="form-control" name="commentaireRejet2" id="field_commentaireRejet2"
+                           formControlName="commentaireRejet2"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.fichierRejet2" for="field_fichierRejet2">Fichier Rejet 2</label>
+                    <div>
+                        <div *ngIf="editForm.get('fichierRejet2')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('fichierRejet2ContentType')!.value, editForm.get('fichierRejet2')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('fichierRejet2ContentType')!.value }}, {{ byteSize(editForm.get('fichierRejet2')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({fichierRejet2: null});editForm.patchValue({fichierRejet2ContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_fichierRejet2" (change)="setFileData($event, 'fichierRejet2', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="fichierRejet2" id="field_fichierRejet2"
+                           formControlName="fichierRejet2"/>
+                    <input type="hidden" class="form-control" name="fichierRejet2ContentType" id="field_fichierRejet2ContentType"
+                           formControlName="fichierRejet2ContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsHistorique.planPassation" for="field_planPassation">Plan Passation</label>
+                    <select class="form-control" id="field_planPassation" name="planPassation" formControlName="planPassationId">
+                        <option *ngIf="!editForm.get('planPassationId')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="planPassationOption.id" *ngFor="let planPassationOption of planpassations; trackBy: trackById">{{ planPassationOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('planPassationId')!.invalid && (editForm.get('planPassationId')!.dirty || editForm.get('planPassationId')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('planPassationId')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
