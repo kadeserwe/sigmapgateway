@@ -61,6 +61,31 @@
                     <li>
                         <a class="dropdown-item" routerLink="historique" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
                             <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.planpassationmsSygService">Services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="syg-type-marche" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.planpassationmsSygTypeMarche">Types de marchés</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="syg-type-service" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.planpassationmsSygTypeService">Types de services</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="syg-type-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.planpassationmsSygTypeSourceFinancement">Types source de financement</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" routerLink="syg-source-financement" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="collapseNavbar()">
+                            <fa-icon icon="asterisk" [fixedWidth]="true"></fa-icon>
+                            <span jhiTranslate="global.menu.entities.planpassationmsSygSourceFinancement">Sources de financement</span>
                             <span jhiTranslate="global.menu.entities.planpassationmsHistorique">Historique</span>
                         </a>
                     </li>

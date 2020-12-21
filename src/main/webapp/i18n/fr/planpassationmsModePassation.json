@@ -2,16 +2,16 @@
   "gatewaysigmapApp": {
     "planpassationmsModePassation": {
       "home": {
-        "title": "ModePassations",
-        "createLabel": "Créer un nouveau Mode Passation",
-        "createOrEditLabel": "Créer ou éditer un Mode Passation",
-        "notFound": "Aucun Mode Passation trouvé"
+        "title": "Modes de passations",
+        "createLabel": "Créer un nouveau Mode de passation",
+        "createOrEditLabel": "Créer ou éditer un Mode de passation",
+        "notFound": "Aucun Mode de passation trouvé"
       },
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Mode Passation {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer le Mode de passation {{ id }} ?"
       },
       "detail": {
-        "title": "Mode Passation"
+        "title": "Mode de passation"
       },
       "libelle": "Libelle",
       "code": "Code",
@@ -23,9 +23,9 @@
   },
   "planpassationmsApp": {
     "planpassationmsModePassation": {
-      "created": "Un nouveau Mode Passation a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Mode Passation avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Mode Passation avec l'identifiant {{ param }} a été supprimé"
+      "created": "Un nouveau Mode de passation a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Mode de passation avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Mode de passation avec l'identifiant {{ param }} a été supprimé"
     }
   }
 }

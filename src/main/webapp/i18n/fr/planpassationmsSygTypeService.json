@@ -2,25 +2,25 @@
   "gatewaysigmapApp": {
     "planpassationmsSygTypeService": {
       "home": {
-        "title": "SygTypeServices",
-        "createLabel": "Créer un nouveau Syg Type Service",
-        "createOrEditLabel": "Créer ou éditer un Syg Type Service",
-        "notFound": "Aucun Syg Type Service trouvé"
+        "title": "Type de services",
+        "createLabel": "Créer un nouveau Type de service",
+        "createOrEditLabel": "Créer ou éditer un Type de service",
+        "notFound": "Aucun Type de service trouvé"
       },
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Syg Type Service {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer le Type de service {{ id }} ?"
       },
       "detail": {
-        "title": "Syg Type Service"
+        "title": "Types de services"
       },
       "libelle": "Libelle"
     }
   },
   "planpassationmsApp": {
     "planpassationmsSygTypeService": {
-      "created": "Un nouveau Syg Type Service a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Syg Type Service avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Syg Type Service avec l'identifiant {{ param }} a été supprimé"
+      "created": "Un nouveau Type de service a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type de service avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type de service avec l'identifiant {{ param }} a été supprimé"
     }
   }
 }

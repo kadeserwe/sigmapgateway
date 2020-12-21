@@ -2,28 +2,28 @@
   "gatewaysigmapApp": {
     "planpassationmsSygService": {
       "home": {
-        "title": "SygServices",
-        "createLabel": "Créer un nouveau Syg Service",
-        "createOrEditLabel": "Créer ou éditer un Syg Service",
-        "notFound": "Aucun Syg Service trouvé"
+        "title": "Services",
+        "createLabel": "Créer un nouveau Service",
+        "createOrEditLabel": "Créer ou éditer un Service",
+        "notFound": "Aucun Service trouvé"
       },
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Syg Service {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer le Service {{ id }} ?"
       },
       "detail": {
-        "title": "Syg Service"
+        "title": "Service"
       },
       "code": "Code",
       "libelle": "Libelle",
       "description": "Description",
-      "sygTypeService": "Syg Type Service"
+      "sygTypeService": "Type de service"
     }
   },
   "planpassationmsApp": {
     "planpassationmsSygService": {
-      "created": "Un nouveau Syg Service a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Syg Service avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Syg Service avec l'identifiant {{ param }} a été supprimé"
+      "created": "Un nouveau Service a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Service avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Service avec l'identifiant {{ param }} a été supprimé"
     }
   }
 }

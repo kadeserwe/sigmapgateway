@@ -2,16 +2,16 @@
   "gatewaysigmapApp": {
     "planpassationmsSygTypeMarche": {
       "home": {
-        "title": "SygTypeMarches",
-        "createLabel": "Créer un nouveau Syg Type Marche",
-        "createOrEditLabel": "Créer ou éditer un Syg Type Marche",
-        "notFound": "Aucun Syg Type Marche trouvé"
+        "title": "Type de marchés",
+        "createLabel": "Créer un nouveau Type de marché",
+        "createOrEditLabel": "Créer ou éditer un Type de marché",
+        "notFound": "Aucun Type de marché trouvé"
       },
       "delete": {
-        "question": "Etes-vous certain de vouloir supprimer le Syg Type Marche {{ id }} ?"
+        "question": "Etes-vous certain de vouloir supprimer le Type de marché {{ id }} ?"
       },
       "detail": {
-        "title": "Syg Type Marche"
+        "title": "Types de marchés"
       },
       "code": "Code",
       "libelle": "Libelle",
@@ -20,9 +20,9 @@
   },
   "planpassationmsApp": {
     "planpassationmsSygTypeMarche": {
-      "created": "Un nouveau Syg Type Marche a été créé avec l'identifiant {{ param }}",
-      "updated": "Le Syg Type Marche avec l'identifiant {{ param }} a été mis à jour",
-      "deleted": "Le Syg Type Marche avec l'identifiant {{ param }} a été supprimé"
+      "created": "Un nouveau Type de marché a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type de marché avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type de marché avec l'identifiant {{ param }} a été supprimé"
     }
   }
 }
