@@ -11,12 +11,12 @@
         "planpassationmsParamDate": "Param Date",
         "planpassationmsRealisation": "Realisation",
         "bailleursBailleurs": "Bailleurs",
-        "planpassationmsModePassation": "Mode Passation",
-        "planpassationmsSygService": "Syg Service",
-        "planpassationmsSygTypeMarche": "Syg Type Marche",
-        "planpassationmsSygTypeService": "Syg Type Service",
-        "planpassationmsSygTypeSourceFinancement": "Syg Type Source Financement",
-        "planpassationmsSygSourceFinancement": "Syg Source Financement",
+        "planpassationmsModePassation": "Modes de passation",
+        "planpassationmsSygService": "Services",
+        "planpassationmsSygTypeMarche": "Types de marchés",
+        "planpassationmsSygTypeService": "Types de services",
+        "planpassationmsSygTypeSourceFinancement": "Types sources de financement",
+        "planpassationmsSygSourceFinancement": "Sources de Financement",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

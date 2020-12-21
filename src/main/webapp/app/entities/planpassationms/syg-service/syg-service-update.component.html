@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
-            <h2 id="jhi-syg-service-heading" jhiTranslate="gatewaysigmapApp.planpassationmsSygService.home.createOrEditLabel">Create or edit a Syg Service</h2>
+            <h2 id="jhi-syg-service-heading" jhiTranslate="gatewaysigmapApp.planpassationmsSygService.home.createOrEditLabel">Create or edit a Service</h2>
 
             <div>
                 <jhi-alert-error></jhi-alert-error>
@@ -37,12 +37,12 @@
 
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsSygService.description" for="field_description">Description</label>
-                    <input type="text" class="form-control" name="description" id="field_description"
-                           formControlName="description"/>
+                    <textarea type="text" class="form-control" name="description" id="field_description"
+                              formControlName="description"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsSygService.sygTypeService" for="field_sygTypeService">Syg Type Service</label>
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsSygService.sygTypeService" for="field_sygTypeService">Types de Services</label>
                     <select class="form-control" id="field_sygTypeService" name="sygTypeService" formControlName="sygTypeServiceId">
                         <option *ngIf="!editForm.get('sygTypeServiceId')!.value" [ngValue]="null" selected></option>
                         <option [ngValue]="sygTypeServiceOption.id" *ngFor="let sygTypeServiceOption of sygtypeservices; trackBy: trackById">{{ sygTypeServiceOption.libelle }}</option>

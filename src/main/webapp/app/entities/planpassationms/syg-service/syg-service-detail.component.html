@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="sygService">
-            <h2><span jhiTranslate="gatewaysigmapApp.planpassationmsSygService.detail.title">Syg Service</span> {{ sygService.id }}</h2>
+            <h2><span jhiTranslate="gatewaysigmapApp.planpassationmsSygService.detail.title">Services</span> {{ sygService.id }}</h2>
 
             <hr>
 
@@ -20,7 +20,7 @@
                 <dd>
                     <span>{{ sygService.description }}</span>
                 </dd>
-                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsSygService.sygTypeService">Syg Type Service</span></dt>
+                <dt><span jhiTranslate="gatewaysigmapApp.planpassationmsSygService.sygTypeService">Types de Services</span></dt>
                 <dd>
                     <div *ngIf="sygService.sygTypeServiceId">
                         <a [routerLink]="['/syg-type-service', sygService.sygTypeServiceId, 'view']">{{ sygService.sygTypeServiceLibelle }}</a>
