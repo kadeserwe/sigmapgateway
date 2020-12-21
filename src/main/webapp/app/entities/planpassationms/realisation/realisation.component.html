@@ -22,45 +22,83 @@
         <table class="table table-striped" aria-describedby="page-heading">
             <thead>
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
-                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!--<th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>-->
                     <th scope="col"  jhiSortBy="libelle"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.libelle">Libelle</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="dateAttribution"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateAttribution">Date Attribution</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="delaiexecution"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.delaiexecution">Delaiexecution</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="planPassationId"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.planPassation">Plan Passation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="objet"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.objet">Objet</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="montant"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.montant">Montant</span> <fa-icon icon="sort"></fa-icon></th>
+                    <!-- <th scope="col"  jhiSortBy="examenDncmp"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.examenDncmp">Examen Dncmp</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="examenPtf"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.examenPtf">Examen Ptf</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="chapitreImputation"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.chapitreImputation">Chapitre Imputation</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="autorisationEngagement"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.autorisationEngagement">Autorisation Engagement</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateReceptionDossier"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateReceptionDossier">Date Reception Dossier</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateNonObjection"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateNonObjection">Date Non Objection</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateAutorisation"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateAutorisation">Date Autorisation</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateRecepNonObjection"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepNonObjection">Date Recep Non Objection</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateRecepDossCorrige"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepDossCorrige">Date Recep Doss Corrige</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="datePubParPrmp"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.datePubParPrmp">Date Pub Par Prmp</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateOuverturePlis"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateOuverturePlis">Date Ouverture Plis</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateRecepNonObjectOcmp"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepNonObjectOcmp">Date Recep Non Object Ocmp</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateRecepRapportEva"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepRapportEva">Date Recep Rapport Eva</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateRecepNonObjectPtf"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepNonObjectPtf">Date Recep Non Object Ptf</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateExamenJuridique"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateExamenJuridique">Date Examen Juridique</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateNotifContrat"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateNotifContrat">Date Notif Contrat</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="dateApprobationContrat"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateApprobationContrat">Date Approbation Contrat</span> <fa-icon icon="sort"></fa-icon></th>
+                     <th scope="col"  jhiSortBy="planPassationId"><span jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.planPassation">Plan Passation</span> <fa-icon icon="sort"></fa-icon></th>-->
                     <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let realisation of realisations ;trackBy: trackId">
-                    <td><a [routerLink]="['/realisation', realisation.id, 'view']">{{ realisation.id }}</a></td>
+                    <!--<td><a [routerLink]="['/realisation', realisation.id, 'view']">{{ realisation.id }}</a></td>-->
                     <td>{{ realisation.libelle }}</td>
                     <td>{{ realisation.dateAttribution | date:'mediumDate' }}</td>
                     <td>{{ realisation.delaiexecution }}</td>
-                    <td>
+                    <td>{{ realisation.objet }}</td>
+                    <td>{{ realisation.montant }}</td>
+                    <!-- <td>{{ realisation.examenDncmp }}</td>
+                     <td>{{ realisation.examenPtf }}</td>
+                     <td>{{ realisation.chapitreImputation }}</td>
+                     <td>{{ realisation.autorisationEngagement }}</td>
+                     <td>{{ realisation.dateReceptionDossier | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateNonObjection | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateAutorisation | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateRecepNonObjection | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateRecepDossCorrige | date:'mediumDate' }}</td>
+                     <td>{{ realisation.datePubParPrmp | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateOuverturePlis | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateRecepNonObjectOcmp | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateRecepRapportEva | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateRecepNonObjectPtf | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateExamenJuridique | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateNotifContrat | date:'mediumDate' }}</td>
+                     <td>{{ realisation.dateApprobationContrat | date:'mediumDate' }}</td>-->
+                  <!--  <td>
                         <div *ngIf="realisation.planPassationId">
                             <a [routerLink]="['/plan-passation', realisation.planPassationId , 'view']" >{{ realisation.planPassationId }}</a>
                         </div>
-                    </td>
+                    </td>-->
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"
-                                    [routerLink]="['/realisation', realisation.id, 'view']"
-                                    class="btn btn-info btn-sm">
-                                <fa-icon icon="eye"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                                    [routerLink]="['/plan-passation', realisation.id, 'view']"
+                                    class="btn  btn-sm" [ngbTooltip]="btnDetails">
+                                <fa-icon icon="eye" style="color: #28a745"></fa-icon>
+                                <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>-->
                             </button>
 
                             <button type="submit"
-                                    [routerLink]="['/realisation', realisation.id, 'edit']"
-                                    class="btn btn-primary btn-sm">
-                                <fa-icon icon="pencil-alt"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                                    [routerLink]="['/plan-passation', realisation.id, 'edit']"
+                                    class="btn  btn-sm" [ngbTooltip]="btnModifier">
+                                <fa-icon icon="pencil-alt" style="color: #17a2b8"></fa-icon>
+                                <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>-->
                             </button>
 
                             <button type="submit" (click)="delete(realisation)"
-                                    class="btn btn-danger btn-sm">
-                                <fa-icon icon="times"></fa-icon>
-                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                                    class="btn  btn-sm" [ngbTooltip]="btnSuprimer">
+                                <fa-icon icon="trash-alt" style="color: #aa0000"></fa-icon>
+                                <!--                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>-->
                             </button>
                         </div>
                     </td>

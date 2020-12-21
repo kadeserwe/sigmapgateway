@@ -24,7 +24,34 @@ describe('Service Tests', () => {
       httpMock = injector.get(HttpTestingController);
       currentDate = moment();
 
-      elemDefault = new PlanPassation(0, currentDate, currentDate, 'AAAAAAA');
+      elemDefault = new PlanPassation(
+        0,
+        currentDate,
+        currentDate,
+        'AAAAAAA',
+        0,
+        currentDate,
+        currentDate,
+        currentDate,
+        'AAAAAAA',
+        'AAAAAAA',
+        'AAAAAAA',
+        'image/png',
+        'AAAAAAA',
+        currentDate,
+        'image/png',
+        'AAAAAAA',
+        'AAAAAAA',
+        currentDate,
+        'AAAAAAA',
+        'AAAAAAA',
+        'image/png',
+        'AAAAAAA',
+        currentDate,
+        currentDate,
+        currentDate,
+        'AAAAAAA'
+      );
     });
 
     describe('Service methods', () => {
@@ -33,6 +60,14 @@ describe('Service Tests', () => {
           {
             dateDebut: currentDate.format(DATE_FORMAT),
             dateFin: currentDate.format(DATE_FORMAT),
+            dateCreation: currentDate.format(DATE_FORMAT),
+            dateMiseValidation: currentDate.format(DATE_FORMAT),
+            dateValidation: currentDate.format(DATE_FORMAT),
+            dateMiseEnValidationCcmp: currentDate.format(DATE_FORMAT),
+            dateValidation1: currentDate.format(DATE_FORMAT),
+            dateValidation2: currentDate.format(DATE_FORMAT),
+            dateRejet: currentDate.format(DATE_FORMAT),
+            datePublication: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -50,6 +85,14 @@ describe('Service Tests', () => {
             id: 0,
             dateDebut: currentDate.format(DATE_FORMAT),
             dateFin: currentDate.format(DATE_FORMAT),
+            dateCreation: currentDate.format(DATE_FORMAT),
+            dateMiseValidation: currentDate.format(DATE_FORMAT),
+            dateValidation: currentDate.format(DATE_FORMAT),
+            dateMiseEnValidationCcmp: currentDate.format(DATE_FORMAT),
+            dateValidation1: currentDate.format(DATE_FORMAT),
+            dateValidation2: currentDate.format(DATE_FORMAT),
+            dateRejet: currentDate.format(DATE_FORMAT),
+            datePublication: currentDate.format(DATE_FORMAT),
           },
           elemDefault
         );
@@ -58,6 +101,14 @@ describe('Service Tests', () => {
           {
             dateDebut: currentDate,
             dateFin: currentDate,
+            dateCreation: currentDate,
+            dateMiseValidation: currentDate,
+            dateValidation: currentDate,
+            dateMiseEnValidationCcmp: currentDate,
+            dateValidation1: currentDate,
+            dateValidation2: currentDate,
+            dateRejet: currentDate,
+            datePublication: currentDate,
           },
           returnedFromService
         );
@@ -75,6 +126,25 @@ describe('Service Tests', () => {
             dateDebut: currentDate.format(DATE_FORMAT),
             dateFin: currentDate.format(DATE_FORMAT),
             commentaire: 'BBBBBB',
+            annee: 1,
+            dateCreation: currentDate.format(DATE_FORMAT),
+            dateMiseValidation: currentDate.format(DATE_FORMAT),
+            dateValidation: currentDate.format(DATE_FORMAT),
+            statut: 'BBBBBB',
+            commentaireMiseEnValidationAC: 'BBBBBB',
+            referenceMiseValidationAC: 'BBBBBB',
+            fichierMiseValidationAC: 'BBBBBB',
+            dateMiseEnValidationCcmp: currentDate.format(DATE_FORMAT),
+            fichierMiseValidationCcmp: 'BBBBBB',
+            referenceMiseValidationCcmp: 'BBBBBB',
+            dateValidation1: currentDate.format(DATE_FORMAT),
+            commentaireValidation: 'BBBBBB',
+            referenceValidation: 'BBBBBB',
+            fichierValidation: 'BBBBBB',
+            dateValidation2: currentDate.format(DATE_FORMAT),
+            dateRejet: currentDate.format(DATE_FORMAT),
+            datePublication: currentDate.format(DATE_FORMAT),
+            commentairePublication: 'BBBBBB',
           },
           elemDefault
         );
@@ -83,6 +153,14 @@ describe('Service Tests', () => {
           {
             dateDebut: currentDate,
             dateFin: currentDate,
+            dateCreation: currentDate,
+            dateMiseValidation: currentDate,
+            dateValidation: currentDate,
+            dateMiseEnValidationCcmp: currentDate,
+            dateValidation1: currentDate,
+            dateValidation2: currentDate,
+            dateRejet: currentDate,
+            datePublication: currentDate,
           },
           returnedFromService
         );
@@ -100,6 +178,25 @@ describe('Service Tests', () => {
             dateDebut: currentDate.format(DATE_FORMAT),
             dateFin: currentDate.format(DATE_FORMAT),
             commentaire: 'BBBBBB',
+            annee: 1,
+            dateCreation: currentDate.format(DATE_FORMAT),
+            dateMiseValidation: currentDate.format(DATE_FORMAT),
+            dateValidation: currentDate.format(DATE_FORMAT),
+            statut: 'BBBBBB',
+            commentaireMiseEnValidationAC: 'BBBBBB',
+            referenceMiseValidationAC: 'BBBBBB',
+            fichierMiseValidationAC: 'BBBBBB',
+            dateMiseEnValidationCcmp: currentDate.format(DATE_FORMAT),
+            fichierMiseValidationCcmp: 'BBBBBB',
+            referenceMiseValidationCcmp: 'BBBBBB',
+            dateValidation1: currentDate.format(DATE_FORMAT),
+            commentaireValidation: 'BBBBBB',
+            referenceValidation: 'BBBBBB',
+            fichierValidation: 'BBBBBB',
+            dateValidation2: currentDate.format(DATE_FORMAT),
+            dateRejet: currentDate.format(DATE_FORMAT),
+            datePublication: currentDate.format(DATE_FORMAT),
+            commentairePublication: 'BBBBBB',
           },
           elemDefault
         );
@@ -108,6 +205,14 @@ describe('Service Tests', () => {
           {
             dateDebut: currentDate,
             dateFin: currentDate,
+            dateCreation: currentDate,
+            dateMiseValidation: currentDate,
+            dateValidation: currentDate,
+            dateMiseEnValidationCcmp: currentDate,
+            dateValidation1: currentDate,
+            dateValidation2: currentDate,
+            dateRejet: currentDate,
+            datePublication: currentDate,
           },
           returnedFromService
         );

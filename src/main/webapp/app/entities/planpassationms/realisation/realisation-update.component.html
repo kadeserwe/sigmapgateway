@@ -50,6 +50,282 @@
                 </div>
 
                 <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.objet" for="field_objet">Objet</label>
+                    <input type="text" class="form-control" name="objet" id="field_objet"
+                           formControlName="objet"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.montant" for="field_montant">Montant</label>
+                    <input type="number" class="form-control" name="montant" id="field_montant"
+                           formControlName="montant"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.examenDncmp" for="field_examenDncmp">Examen Dncmp</label>
+                    <input type="number" class="form-control" name="examenDncmp" id="field_examenDncmp"
+                           formControlName="examenDncmp"/>
+                    <div *ngIf="editForm.get('examenDncmp')!.invalid && (editForm.get('examenDncmp')!.dirty || editForm.get('examenDncmp')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('examenDncmp')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('examenDncmp')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.examenPtf" for="field_examenPtf">Examen Ptf</label>
+                    <input type="number" class="form-control" name="examenPtf" id="field_examenPtf"
+                           formControlName="examenPtf"/>
+                    <div *ngIf="editForm.get('examenPtf')!.invalid && (editForm.get('examenPtf')!.dirty || editForm.get('examenPtf')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('examenPtf')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('examenPtf')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.chapitreImputation" for="field_chapitreImputation">Chapitre Imputation</label>
+                    <input type="text" class="form-control" name="chapitreImputation" id="field_chapitreImputation"
+                           formControlName="chapitreImputation"/>
+                    <div *ngIf="editForm.get('chapitreImputation')!.invalid && (editForm.get('chapitreImputation')!.dirty || editForm.get('chapitreImputation')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('chapitreImputation')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.autorisationEngagement" for="field_autorisationEngagement">Autorisation Engagement</label>
+                    <input type="text" class="form-control" name="autorisationEngagement" id="field_autorisationEngagement"
+                           formControlName="autorisationEngagement"/>
+                    <div *ngIf="editForm.get('autorisationEngagement')!.invalid && (editForm.get('autorisationEngagement')!.dirty || editForm.get('autorisationEngagement')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('autorisationEngagement')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateReceptionDossier" for="field_dateReceptionDossier">Date Reception Dossier</label>
+                    <div class="input-group">
+                        <input id="field_dateReceptionDossier" type="text" class="form-control" name="dateReceptionDossier" ngbDatepicker #dateReceptionDossierDp="ngbDatepicker" formControlName="dateReceptionDossier"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateReceptionDossierDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateReceptionDossier')!.invalid && (editForm.get('dateReceptionDossier')!.dirty || editForm.get('dateReceptionDossier')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateReceptionDossier')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateNonObjection" for="field_dateNonObjection">Date Non Objection</label>
+                    <div class="input-group">
+                        <input id="field_dateNonObjection" type="text" class="form-control" name="dateNonObjection" ngbDatepicker #dateNonObjectionDp="ngbDatepicker" formControlName="dateNonObjection"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateNonObjectionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateNonObjection')!.invalid && (editForm.get('dateNonObjection')!.dirty || editForm.get('dateNonObjection')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateNonObjection')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateAutorisation" for="field_dateAutorisation">Date Autorisation</label>
+                    <div class="input-group">
+                        <input id="field_dateAutorisation" type="text" class="form-control" name="dateAutorisation" ngbDatepicker #dateAutorisationDp="ngbDatepicker" formControlName="dateAutorisation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateAutorisationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateAutorisation')!.invalid && (editForm.get('dateAutorisation')!.dirty || editForm.get('dateAutorisation')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateAutorisation')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepNonObjection" for="field_dateRecepNonObjection">Date Recep Non Objection</label>
+                    <div class="input-group">
+                        <input id="field_dateRecepNonObjection" type="text" class="form-control" name="dateRecepNonObjection" ngbDatepicker #dateRecepNonObjectionDp="ngbDatepicker" formControlName="dateRecepNonObjection"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRecepNonObjectionDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateRecepNonObjection')!.invalid && (editForm.get('dateRecepNonObjection')!.dirty || editForm.get('dateRecepNonObjection')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateRecepNonObjection')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepDossCorrige" for="field_dateRecepDossCorrige">Date Recep Doss Corrige</label>
+                    <div class="input-group">
+                        <input id="field_dateRecepDossCorrige" type="text" class="form-control" name="dateRecepDossCorrige" ngbDatepicker #dateRecepDossCorrigeDp="ngbDatepicker" formControlName="dateRecepDossCorrige"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRecepDossCorrigeDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateRecepDossCorrige')!.invalid && (editForm.get('dateRecepDossCorrige')!.dirty || editForm.get('dateRecepDossCorrige')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateRecepDossCorrige')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.datePubParPrmp" for="field_datePubParPrmp">Date Pub Par Prmp</label>
+                    <div class="input-group">
+                        <input id="field_datePubParPrmp" type="text" class="form-control" name="datePubParPrmp" ngbDatepicker #datePubParPrmpDp="ngbDatepicker" formControlName="datePubParPrmp"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datePubParPrmpDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('datePubParPrmp')!.invalid && (editForm.get('datePubParPrmp')!.dirty || editForm.get('datePubParPrmp')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('datePubParPrmp')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateOuverturePlis" for="field_dateOuverturePlis">Date Ouverture Plis</label>
+                    <div class="input-group">
+                        <input id="field_dateOuverturePlis" type="text" class="form-control" name="dateOuverturePlis" ngbDatepicker #dateOuverturePlisDp="ngbDatepicker" formControlName="dateOuverturePlis"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateOuverturePlisDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateOuverturePlis')!.invalid && (editForm.get('dateOuverturePlis')!.dirty || editForm.get('dateOuverturePlis')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateOuverturePlis')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepNonObjectOcmp" for="field_dateRecepNonObjectOcmp">Date Recep Non Object Ocmp</label>
+                    <div class="input-group">
+                        <input id="field_dateRecepNonObjectOcmp" type="text" class="form-control" name="dateRecepNonObjectOcmp" ngbDatepicker #dateRecepNonObjectOcmpDp="ngbDatepicker" formControlName="dateRecepNonObjectOcmp"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRecepNonObjectOcmpDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateRecepNonObjectOcmp')!.invalid && (editForm.get('dateRecepNonObjectOcmp')!.dirty || editForm.get('dateRecepNonObjectOcmp')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateRecepNonObjectOcmp')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepRapportEva" for="field_dateRecepRapportEva">Date Recep Rapport Eva</label>
+                    <div class="input-group">
+                        <input id="field_dateRecepRapportEva" type="text" class="form-control" name="dateRecepRapportEva" ngbDatepicker #dateRecepRapportEvaDp="ngbDatepicker" formControlName="dateRecepRapportEva"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRecepRapportEvaDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateRecepRapportEva')!.invalid && (editForm.get('dateRecepRapportEva')!.dirty || editForm.get('dateRecepRapportEva')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateRecepRapportEva')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateRecepNonObjectPtf" for="field_dateRecepNonObjectPtf">Date Recep Non Object Ptf</label>
+                    <div class="input-group">
+                        <input id="field_dateRecepNonObjectPtf" type="text" class="form-control" name="dateRecepNonObjectPtf" ngbDatepicker #dateRecepNonObjectPtfDp="ngbDatepicker" formControlName="dateRecepNonObjectPtf"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRecepNonObjectPtfDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateRecepNonObjectPtf')!.invalid && (editForm.get('dateRecepNonObjectPtf')!.dirty || editForm.get('dateRecepNonObjectPtf')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateRecepNonObjectPtf')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateExamenJuridique" for="field_dateExamenJuridique">Date Examen Juridique</label>
+                    <div class="input-group">
+                        <input id="field_dateExamenJuridique" type="text" class="form-control" name="dateExamenJuridique" ngbDatepicker #dateExamenJuridiqueDp="ngbDatepicker" formControlName="dateExamenJuridique"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateExamenJuridiqueDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateExamenJuridique')!.invalid && (editForm.get('dateExamenJuridique')!.dirty || editForm.get('dateExamenJuridique')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateExamenJuridique')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateNotifContrat" for="field_dateNotifContrat">Date Notif Contrat</label>
+                    <div class="input-group">
+                        <input id="field_dateNotifContrat" type="text" class="form-control" name="dateNotifContrat" ngbDatepicker #dateNotifContratDp="ngbDatepicker" formControlName="dateNotifContrat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateNotifContratDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateNotifContrat')!.invalid && (editForm.get('dateNotifContrat')!.dirty || editForm.get('dateNotifContrat')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateNotifContrat')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.dateApprobationContrat" for="field_dateApprobationContrat">Date Approbation Contrat</label>
+                    <div class="input-group">
+                        <input id="field_dateApprobationContrat" type="text" class="form-control" name="dateApprobationContrat" ngbDatepicker #dateApprobationContratDp="ngbDatepicker" formControlName="dateApprobationContrat"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateApprobationContratDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateApprobationContrat')!.invalid && (editForm.get('dateApprobationContrat')!.dirty || editForm.get('dateApprobationContrat')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateApprobationContrat')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsRealisation.planPassation" for="field_planPassation">Plan Passation</label>
                     <select class="form-control" id="field_planPassation" name="planPassation" formControlName="planPassationId">
                         <option *ngIf="!editForm.get('planPassationId')!.value" [ngValue]="null" selected></option>

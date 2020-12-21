@@ -45,8 +45,8 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:postgresql://localhost:5432/sigmapgw
-    username: postgres
-    password: passer
+    username: fatou
+    password: dieng
     hikari:
       poolName: Hikari
       auto-commit: false

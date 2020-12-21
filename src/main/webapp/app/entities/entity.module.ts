@@ -27,6 +27,10 @@ import { RouterModule } from '@angular/router';
           import('./planpassationms/mode-passation/mode-passation.module').then(m => m.PlanpassationmsModePassationModule),
       },
       {
+        path: 'historique',
+        loadChildren: () => import('./planpassationms/historique/historique.module').then(m => m.PlanpassationmsHistoriqueModule),
+      },
+      {
         path: 'syg-service',
         loadChildren: () => import('./planpassationms/syg-service/syg-service.module').then(m => m.PlanpassationmsSygServiceModule),
       },

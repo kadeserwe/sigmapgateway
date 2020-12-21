@@ -11,6 +11,8 @@
         "planpassationmsParamDate": "Param Date",
         "planpassationmsRealisation": "Realisation",
         "bailleursBailleurs": "Bailleurs",
+        "planpassationmsModePassation": "Mode Passation",
+        "planpassationmsHistorique": "Historique",
         "planpassationmsModePassation": "Modes de passation",
         "planpassationmsSygService": "Services",
         "planpassationmsSygTypeMarche": "Types de marchés",

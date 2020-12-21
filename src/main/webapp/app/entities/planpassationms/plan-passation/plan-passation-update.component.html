@@ -36,6 +36,207 @@
                     <input type="text" class="form-control" name="commentaire" id="field_commentaire"
                            formControlName="commentaire"/>
                 </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.annee" for="field_annee">Annee</label>
+                    <input type="number" class="form-control" name="annee" id="field_annee"
+                           formControlName="annee"/>
+                    <div *ngIf="editForm.get('annee')!.invalid && (editForm.get('annee')!.dirty || editForm.get('annee')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('annee')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('annee')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateCreation" for="field_dateCreation">Date Creation</label>
+                    <div class="input-group">
+                        <input id="field_dateCreation" type="text" class="form-control" name="dateCreation" ngbDatepicker #dateCreationDp="ngbDatepicker" formControlName="dateCreation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateCreationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                    <div *ngIf="editForm.get('dateCreation')!.invalid && (editForm.get('dateCreation')!.dirty || editForm.get('dateCreation')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('dateCreation')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseValidation" for="field_dateMiseValidation">Date Mise Validation</label>
+                    <div class="input-group">
+                        <input id="field_dateMiseValidation" type="text" class="form-control" name="dateMiseValidation" ngbDatepicker #dateMiseValidationDp="ngbDatepicker" formControlName="dateMiseValidation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateMiseValidationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation" for="field_dateValidation">Date Validation</label>
+                    <div class="input-group">
+                        <input id="field_dateValidation" type="text" class="form-control" name="dateValidation" ngbDatepicker #dateValidationDp="ngbDatepicker" formControlName="dateValidation"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateValidationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.statut" for="field_statut">Statut</label>
+                    <input type="text" class="form-control" name="statut" id="field_statut"
+                           formControlName="statut"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaireMiseEnValidationAC" for="field_commentaireMiseEnValidationAC">Commentaire Mise En Validation AC</label>
+                    <input type="text" class="form-control" name="commentaireMiseEnValidationAC" id="field_commentaireMiseEnValidationAC"
+                           formControlName="commentaireMiseEnValidationAC"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceMiseValidationAC" for="field_referenceMiseValidationAC">Reference Mise Validation AC</label>
+                    <input type="text" class="form-control" name="referenceMiseValidationAC" id="field_referenceMiseValidationAC"
+                           formControlName="referenceMiseValidationAC"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierMiseValidationAC" for="field_fichierMiseValidationAC">Fichier Mise Validation AC</label>
+                    <div>
+                        <div *ngIf="editForm.get('fichierMiseValidationAC')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('fichierMiseValidationACContentType')!.value, editForm.get('fichierMiseValidationAC')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('fichierMiseValidationACContentType')!.value }}, {{ byteSize(editForm.get('fichierMiseValidationAC')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({fichierMiseValidationAC: null});editForm.patchValue({fichierMiseValidationACContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_fichierMiseValidationAC" (change)="setFileData($event, 'fichierMiseValidationAC', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="fichierMiseValidationAC" id="field_fichierMiseValidationAC"
+                           formControlName="fichierMiseValidationAC"/>
+                    <input type="hidden" class="form-control" name="fichierMiseValidationACContentType" id="field_fichierMiseValidationACContentType"
+                           formControlName="fichierMiseValidationACContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateMiseEnValidationCcmp" for="field_dateMiseEnValidationCcmp">Date Mise En Validation Ccmp</label>
+                    <div class="input-group">
+                        <input id="field_dateMiseEnValidationCcmp" type="text" class="form-control" name="dateMiseEnValidationCcmp" ngbDatepicker #dateMiseEnValidationCcmpDp="ngbDatepicker" formControlName="dateMiseEnValidationCcmp"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateMiseEnValidationCcmpDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierMiseValidationCcmp" for="field_fichierMiseValidationCcmp">Fichier Mise Validation Ccmp</label>
+                    <div>
+                        <div *ngIf="editForm.get('fichierMiseValidationCcmp')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('fichierMiseValidationCcmpContentType')!.value, editForm.get('fichierMiseValidationCcmp')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('fichierMiseValidationCcmpContentType')!.value }}, {{ byteSize(editForm.get('fichierMiseValidationCcmp')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({fichierMiseValidationCcmp: null});editForm.patchValue({fichierMiseValidationCcmpContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_fichierMiseValidationCcmp" (change)="setFileData($event, 'fichierMiseValidationCcmp', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="fichierMiseValidationCcmp" id="field_fichierMiseValidationCcmp"
+                           formControlName="fichierMiseValidationCcmp"/>
+                    <input type="hidden" class="form-control" name="fichierMiseValidationCcmpContentType" id="field_fichierMiseValidationCcmpContentType"
+                           formControlName="fichierMiseValidationCcmpContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceMiseValidationCcmp" for="field_referenceMiseValidationCcmp">Reference Mise Validation Ccmp</label>
+                    <input type="text" class="form-control" name="referenceMiseValidationCcmp" id="field_referenceMiseValidationCcmp"
+                           formControlName="referenceMiseValidationCcmp"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation1" for="field_dateValidation1">Date Validation 1</label>
+                    <div class="input-group">
+                        <input id="field_dateValidation1" type="text" class="form-control" name="dateValidation1" ngbDatepicker #dateValidation1Dp="ngbDatepicker" formControlName="dateValidation1"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateValidation1Dp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentaireValidation" for="field_commentaireValidation">Commentaire Validation</label>
+                    <input type="text" class="form-control" name="commentaireValidation" id="field_commentaireValidation"
+                           formControlName="commentaireValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.referenceValidation" for="field_referenceValidation">Reference Validation</label>
+                    <input type="text" class="form-control" name="referenceValidation" id="field_referenceValidation"
+                           formControlName="referenceValidation"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.fichierValidation" for="field_fichierValidation">Fichier Validation</label>
+                    <div>
+                        <div *ngIf="editForm.get('fichierValidation')!.value" class="form-text text-danger clearfix">
+                            <a class="pull-left" (click)="openFile(editForm.get('fichierValidationContentType')!.value, editForm.get('fichierValidation')!.value)" jhiTranslate="entity.action.open">open</a><br>
+                            <span class="pull-left">{{ editForm.get('fichierValidationContentType')!.value }}, {{ byteSize(editForm.get('fichierValidation')!.value) }}</span>
+                            <button type="button" (click)="editForm.patchValue({fichierValidation: null});editForm.patchValue({fichierValidationContentType: null});"
+                                    class="btn btn-secondary btn-xs pull-right">
+                                <fa-icon icon="times"></fa-icon>
+                            </button>
+                        </div>
+                        <input type="file" id="file_fichierValidation" (change)="setFileData($event, 'fichierValidation', false)" jhiTranslate="entity.action.addblob"/>
+                    </div>
+                    <input type="hidden" class="form-control" name="fichierValidation" id="field_fichierValidation"
+                           formControlName="fichierValidation"/>
+                    <input type="hidden" class="form-control" name="fichierValidationContentType" id="field_fichierValidationContentType"
+                           formControlName="fichierValidationContentType" />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateValidation2" for="field_dateValidation2">Date Validation 2</label>
+                    <div class="input-group">
+                        <input id="field_dateValidation2" type="text" class="form-control" name="dateValidation2" ngbDatepicker #dateValidation2Dp="ngbDatepicker" formControlName="dateValidation2"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateValidation2Dp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.dateRejet" for="field_dateRejet">Date Rejet</label>
+                    <div class="input-group">
+                        <input id="field_dateRejet" type="text" class="form-control" name="dateRejet" ngbDatepicker #dateRejetDp="ngbDatepicker" formControlName="dateRejet"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="dateRejetDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.datePublication" for="field_datePublication">Date Publication</label>
+                    <div class="input-group">
+                        <input id="field_datePublication" type="text" class="form-control" name="datePublication" ngbDatepicker #datePublicationDp="ngbDatepicker" formControlName="datePublication"/>
+                        <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="datePublicationDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="gatewaysigmapApp.planpassationmsPlanPassation.commentairePublication" for="field_commentairePublication">Commentaire Publication</label>
+                    <input type="text" class="form-control" name="commentairePublication" id="field_commentairePublication"
+                           formControlName="commentairePublication"/>
+                </div>
             </div>
 
             <div>
